@@ -76,7 +76,7 @@ const Layout: React.FC = () => {
       } catch (error) {
       }
       setCaseDetials(caseDetails)
-      console.log(caseDetails)
+      // console.log(caseDetails)
     }
   }
 

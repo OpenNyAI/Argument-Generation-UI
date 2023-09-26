@@ -27,7 +27,7 @@ function RoutesAuth () {
 
   // Check if the access token is expired
   const isAccessTokenExpired = () => {
-    if (((contextValue?.isAuthenticated) === true) && contextValue.accessToken.length > 0) {
+    if (((contextValue?.isAuthenticated) === 'true') && contextValue.accessToken.length > 0) {
       const basicDecode: string = atob(contextValue.accessToken?.split('.')[1])
       const decodedToken: unknown = JSON.parse(basicDecode)
       const currentTime = Math.floor(Date.now() / 1000)
@@ -59,7 +59,7 @@ function RoutesAuth () {
 
   const checkAndRefreshToken = async () => {
     console.log('refreshtoken time', accessTokenExpireTime, calculateTimeBeforeExpiration())
-    if ((isAccessTokenExpired() === true) && ((contextValue?.isAuthenticated) === true)) {
+    if ((isAccessTokenExpired() === true) && ((contextValue?.isAuthenticated) === 'true')) {
       try {
         const newTokenInfo = await refreshAccessToken()
         contextValue.updateAccessToken((newTokenInfo as LoginResponse)?.access_token)
@@ -79,14 +79,16 @@ function RoutesAuth () {
     } // Check every minute
   }, [])
 
+  console.log(contextValue?.isAuthenticated, contextValue?.case_id)
+
   return (
     <Routes>
-      <Route path='/homepage' element={<Protected isLoggedIn={contextValue?.isAuthenticated as boolean}><Layout /></Protected>} />
-      <Route path='/facts' element={<Protected isLoggedIn={contextValue?.isAuthenticated as boolean}><FactsPage /></Protected>} />
-      <Route path='/issues' element={<Protected isLoggedIn={contextValue?.isAuthenticated as boolean}><Issues /></Protected>} />
-      <Route path='/statutes' element={<Protected isLoggedIn={contextValue?.isAuthenticated as boolean}><Statutes /></Protected>} />
-      <Route path='/precedent' element={<Protected isLoggedIn={contextValue?.isAuthenticated as boolean}><PrecedentPage /></Protected>} />
-      <Route path='/arguments' element={<Protected isLoggedIn={contextValue?.isAuthenticated as boolean}><ArgumentsPage /></Protected>} />
+      <Route path='/homepage' element={<Protected isLoggedIn={contextValue?.isAuthenticated as string}><Layout /></Protected>} />
+      <Route path='/facts' element={<Protected isLoggedIn={contextValue?.isAuthenticated as string}><FactsPage /></Protected>} />
+      <Route path='/issues' element={<Protected isLoggedIn={contextValue?.isAuthenticated as string}><Issues /></Protected>} />
+      <Route path='/statutes' element={<Protected isLoggedIn={contextValue?.isAuthenticated as string}><Statutes /></Protected>} />
+      <Route path='/precedent' element={<Protected isLoggedIn={contextValue?.isAuthenticated as string}><PrecedentPage /></Protected>} />
+      <Route path='/arguments' element={<Protected isLoggedIn={contextValue?.isAuthenticated as string}><ArgumentsPage /></Protected>} />
     </Routes>
   )
 }

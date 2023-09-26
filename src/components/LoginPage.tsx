@@ -51,7 +51,7 @@ const Login: React.FC = () => {
             setErrorMessage(result.detail)
           } else {
             console.log('logged in')
-            contextValue?.updateIsAuthenticated(true)
+            contextValue?.updateIsAuthenticated('true')
             contextValue?.updateAccessToken(result.access_token)
             contextValue?.updateRefreshToken(result.refresh_token)
             contextValue?.updateUsername(formData.email)

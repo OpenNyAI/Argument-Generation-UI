@@ -5,8 +5,8 @@ import { type CustomContextProps } from '../prop-types/labelingProps'
 interface contextProp {
   updateAccessToken: (newAccessToken: string) => void
   updateRefreshToken: (newRefreshToken: string) => void
-  updateIsAuthenticated: (value: boolean) => void
-  isAuthenticated: boolean
+  updateIsAuthenticated: (value: string) => void
+  isAuthenticated: string
   accessToken: string
   refreshToken: string
   username: string
@@ -26,16 +26,17 @@ export const CustomContextProvider: React.FC<CustomContextProps> = ({ children }
   const [accessToken, setAccessToken] = useState<string>(accesstokenStored ?? '')
   const [refreshToken, setRefreshToken] = useState<string>(refreshtokenStored ?? '')
   const [case_id, setCaseId] = useState<string>(caseIdStored ?? '')
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(((localStorage?.getItem('logged-in')) != null))
+  const [isAuthenticated, setIsAuthenticated] = useState<string>(localStorage.getItem('logged-in') as string)
 
   const updateUsername = (uname: string) => {
     setUsername(uname)
     localStorage.setItem('username', uname)
   }
 
-  const updateIsAuthenticated = (value: boolean) => {
+  const updateIsAuthenticated = (value: string) => {
     setIsAuthenticated(value)
     localStorage.setItem('logged-in', String(value))
+    console.log('iside context ', localStorage.getItem('logged-in'))
   }
 
   const updateAccessToken = (newAccessToken: string) => {

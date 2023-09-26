@@ -12,7 +12,7 @@ const Header: React.FC<headerProp> = ({ isLoginPage }) => {
 
   const handleLogOut = () => {
     console.log('Logging out')
-    contextValue?.updateIsAuthenticated(false)
+    contextValue?.updateIsAuthenticated('false')
     contextValue?.updateAccessToken('')
     contextValue?.updateRefreshToken('')
     contextValue?.updateUsername('')
