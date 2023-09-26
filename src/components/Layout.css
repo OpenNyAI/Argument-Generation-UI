@@ -1,0 +1,39 @@
+.layout {
+    display: flex;
+    width: 80%;
+    height: 90%;
+    /* background-color: #2C2D2E; */
+    position: fixed;
+    top: 53%;
+    left: 50%;
+    gap: 10px;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+}
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    border: none;
+}
+
+.query-area {
+    display: flex;
+    width: 70%;
+    height: 40%;
+    align-items: center;
+}
+
+.next-button {
+    background-color: #090909;
+    color: #ffffff;
+    width: 60px;
+    height: 30px;
+}
+
+.heading {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}

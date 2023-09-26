@@ -1,0 +1,66 @@
+.facts-area {
+    display: flex;
+    width: 95%;
+    height: 80%;
+    /* background-color: #222324; */
+    flex-direction: column;
+    align-items: center;
+}
+
+.facts {
+    display: flex;
+    margin: 2%;
+    width: 95%;
+    height: 100%;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+
+.content-input {
+    height: 55vh;
+    width: 100%;
+    /* min-height: 50px; Adjust the minimum height as needed */
+    resize: vertical;
+    overflow-y: auto;
+    overflow-wrap: break-word;
+    border: none;
+    margin-left: 25px;
+    /* justify-content: center; */
+    /* align-items: center; */
+  }
+
+.edit-button {
+    display: flex;
+    height: 30px;
+    width: 10%;
+    /* position: fixed; */
+    justify-content: center;
+}
+
+.save-button {
+    display: flex;
+    height: 30px;
+}
+
+.facts-layout {
+    background-color: #FDF8FF;
+    margin-left: 3%;
+    margin-right: 3%;
+    padding: 2%;
+    border-radius: 2.5%;
+}
+
+.facts-content-area {
+    overflow-y: auto;
+    white-space: pre-wrap;
+    height: 62vh;
+}
+
+.MuiTabs-indicator{
+    background: #DD81F6 !important;
+}
+
+.Mui-selected {
+    color: #DD81F6 !important;
+}

@@ -1,0 +1,36 @@
+.issue-factsarea {
+    display: flex;
+    background-color: #212121;
+    width: 50%;
+    height: 90%;
+    white-space: pre-wrap;
+    overflow: auto;
+    padding: 1%;
+    scrollbar-color: dark;
+}
+
+.issue-issuesarea {
+    display: flex;
+    background-color: #212121;
+    width: 50%;
+    height: 90%;
+    white-space: pre-wrap;
+    overflow: auto;
+    padding: 1%;
+    flex-direction: column;
+}
+
+.heading {
+    margin: 0;
+    padding: 10px;
+  }
+
+.content-input{
+    border: none;
+}
+
+.issues-content-area {
+    overflow-y: auto;
+    white-space: pre-wrap;
+    height: 62vh;
+}

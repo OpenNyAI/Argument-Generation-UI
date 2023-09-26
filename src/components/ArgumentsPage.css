@@ -1,0 +1,17 @@
+.arguments-layout {
+    background-color: #FDF8FF;
+    border-radius: 2.5%;
+    overflow: auto;
+    height: 85vh;
+    width: 150vh;
+    margin: auto;
+    /* width: 50%; */
+    padding: 10px;
+}
+
+.sectionList {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    height: 63vh;
+}
